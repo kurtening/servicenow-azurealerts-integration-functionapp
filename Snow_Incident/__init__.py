@@ -1,6 +1,6 @@
 import logging
-
 import azure.functions as func
+from shared_code.classess import NewIncident
 
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
@@ -15,4 +15,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     Returns:
         func.HttpResponse: HttpResponse from the function app
     """
-    pass
+    incident = NewIncident().create_incident(body=req.get_body())
+    logging.info(incident)
+    return func.HttpResponse(
+        str(incident)
+    )
