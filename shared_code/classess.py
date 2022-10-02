@@ -22,7 +22,8 @@ class NewIncident(ServiceNow):
         "Content-Type": "application/json",
         "Accept": "application/json"
     }
-    table: str = "/api/now/table/incident"
+    snow_rest_api: str = '/api/now/table/'
+    table: str = "incident"
 
     def create_incident(self, body: str) -> dict:
         url = f"https://{self.instance}{self.table}"
