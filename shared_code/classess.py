@@ -6,14 +6,13 @@ import requests
 class ServiceNow:
     """Service Now API Details
     """
-    # The instance of your service now "dev.service-now.com"
+    # The instance of your service now "<instance>.service-now.com"
     instance: str
-    # Service Account Username 
+    # Service Account Username
     # (Must have itil, rest_service, and web services role)
     username: str
     # Service Account Password
     password: str
-    pass
 
 
 @dataclass
